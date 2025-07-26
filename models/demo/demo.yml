@@ -5,6 +5,7 @@ models:
     description: "DBT model for employee table"
     columns:
       - name: emp_id
+        description: "{{doc('employee_description')}}"
         tests:
           - unique
           - not_null
