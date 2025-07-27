@@ -37,6 +37,7 @@ models:
 
 sources:
   - name: employee
+    description: stuff
     database: DBT_DB
     schema: PUBLIC
     tables:
