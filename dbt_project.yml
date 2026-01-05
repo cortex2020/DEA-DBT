@@ -9,6 +9,13 @@ config-version: 2
 # This setting configures which "profile" dbt uses for this project.
 profile: 'default'
 
+vars:
+   wrk_schema: BRONZE
+   file_format_csv: DEA_SCD2.BRONZE.MY_CSV_FORMAT
+   purge_status: FALSE
+   stage_name: DEA_SCD2.BRONZE.s3_test_stage
+   rawhist_db: DEA_SCD2
+
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
