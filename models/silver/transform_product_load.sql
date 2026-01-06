@@ -2,6 +2,7 @@
  "transient":true,
  "alias":'WORK_PRODUCT_TRANSFORM',
  "pre_hook": macros_copy_csv('WORK_PRODUCT_COPY'),
+ "database": "PC_DBT_DB",
  "schema": 'SILVER'
 })}}
 
