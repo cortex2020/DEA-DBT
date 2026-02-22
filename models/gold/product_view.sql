@@ -1,7 +1,7 @@
 {{ config({ "materialized":'view',
  "alias":'PRODUCT_VIEW',
  "schema": 'GOLD',
- "Database": "PC_DBT_DB"
+ "database": "PC_DBT_DB"
 })}}
 
 
