@@ -2,12 +2,11 @@
  "transient":true,
  "alias":'WORK_PRODUCT_TRANSFORM',
  "pre_hook": macros_copy_csv('WORK_PRODUCT_COPY'),
- "database": "PC_DBT_DB",
+ "database": "DEA_SCD2",
  "schema": 'SILVER'
 })}}
 
  
-
 WITH transform AS(
 SELECT 
     PRODUCT_ID AS PRODUCT_ID
