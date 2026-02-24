@@ -1,6 +1,6 @@
 {% macro macros_copy_csv(table_nm) %} 
 
-delete from {{ var('rawhist_db') }}.{{ var('wrk_schema') }}.{{ table_nm }};
+DELETE FROM {{ var('rawhist_db') }}.{{ var('wrk_schema') }}.{{ table_nm }};
 
 COPY INTO {{ var('rawhist_db') }}.{{ var('wrk_schema') }}.{{ table_nm }} 
 FROM 

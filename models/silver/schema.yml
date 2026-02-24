@@ -8,7 +8,7 @@ sources:
 
 
     - name: xfm
-      database: PC_DBT_DB
+      database: DEA_SCD2
       schema: SILVER
       tables:
         - name: WORK_PRODUCT_TRANSFORM

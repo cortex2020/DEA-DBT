@@ -42,11 +42,30 @@ clean-targets:         # directories to be removed by `dbt clean`
 # continue to be built as views. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 
+# models:
+#   dea_scd2_proj:
+#       silver:
+#           +schema: silver
+#           +materialized: table
+#       gold:
+#           +schema: gold
+#           +materialized: view
+
+
 models:
   dea_scd2_proj:
-      silver:
-          +schema: silver
-          +materialized: table
-      gold:
-          +schema: gold
-          +materialized: view
+    # Applying hooks at the project level so every model gets tagged
+    +pre-hook: 
+      - "{{ set_query_tag() }}"
+    +post-hook:
+      - "alter session unset query_tag"
+
+    # Specific configurations for your layers
+    silver:
+      +schema: silver
+      +materialized: table
+      +transient: true
+      
+    gold:
+      +schema: gold
+      +materialized: view
