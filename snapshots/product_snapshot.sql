@@ -1,8 +1,8 @@
 {% snapshot product_snapshot %}
 {{
     config(      
-      database='DEA_SCD2',
-      schema='snapshots',
+      target_database='DEA_SCD2',
+      target_schema='snapshots',
       unique_key='PRODUCT_ID',
       strategy='check',
       check_cols=['PRODUCT_NAME', 'CATEGORY', 'SELLING_PRICE', 'MODEL_NUMBER', 'ABOUT_PRODUCT', 'PRODUCT_SPECIFICATION', 
