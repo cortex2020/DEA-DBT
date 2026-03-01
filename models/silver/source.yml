@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: bronze
+    database: DEA_WAL_DB
+    schema: BRONZE
+    tables:
+      - name: STORE_RAW
+      - name: DEPARTMENT_RAW
+      - name: FACT_RAW
