@@ -4,7 +4,6 @@
     incremental_strategy = 'merge',
     pre_hook = ["{{ copy_store_raw() }}", "{{ copy_department_raw() }}"],
     merge_update_columns = ['store_type','store_size','update_date'],
-    merge_exclude_columns = ['insert_date']
 ) }}
 
 with stores as (
@@ -13,7 +12,11 @@ with stores as (
     store_type,
     size as store_size
   from {{ source('bronze','STORE_RAW') }}
+  {% if is_incremental() %}
+    where insert_dts > (select coalesce(max(update_date), '1900-01-01'::timestamp_ntz) from {{ this }})
+  {% endif %}
 ),
+
 
 depts as (
   select distinct

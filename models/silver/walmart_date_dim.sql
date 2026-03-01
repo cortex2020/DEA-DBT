@@ -11,11 +11,9 @@ with src as (
         dept_date as store_date,
         isholiday
     from {{ source('bronze', 'DEPARTMENT_RAW') }}
-
     {% if is_incremental() %}
       where dept_date > (select coalesce(max(store_date), '1900-01-01'::date) from {{ this }})
     {% endif %}
-
 ),
 
 dedup as (
