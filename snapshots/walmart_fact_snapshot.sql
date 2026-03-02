@@ -11,7 +11,8 @@
       'unemployment',
       'cpi',
       'markdown1','markdown2','markdown3','markdown4','markdown5'
-    ]
+    ],
+    pre_hook=["{{ copy_fact_raw() }}", "{{ copy_department_raw() }}"],
   )
 }}
 
