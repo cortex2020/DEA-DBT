@@ -19,11 +19,6 @@ sources:
   #   tables:
   #     - name: walmart_date_dim
   #     - name: walmart_store_dim
-
-  # - name: gold
-  #   database: DEA_WAL_DB
-  #   schema: GOLD
-  #   tables:
   #     - name: walmart_fact_table
 
   # - name: snapshots
