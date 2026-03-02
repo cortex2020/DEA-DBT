@@ -12,7 +12,7 @@
       'cpi',
       'markdown1','markdown2','markdown3','markdown4','markdown5'
     ],
-    pre_hook=["{{ copy_fact_raw() }}", "{{ copy_department_raw() }}"],
+    pre_hook=["{{ copy_fact_raw() }}", "{{ copy_department_raw() }}"]
   )
 }}
 
@@ -30,8 +30,8 @@ select
   f.markdown3,
   f.markdown4,
   f.markdown5
-from {{ source('bronze','FACT_RAW') }} f
-join {{ source('bronze','DEPARTMENT_RAW') }} d
+from {{ source('bronze','fact_raw') }} f
+join {{ source('bronze','department_raw') }} d
   on d.store_id = f.store_id
  and d.dept_date = f.fact_date
 

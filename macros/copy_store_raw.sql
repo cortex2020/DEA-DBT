@@ -1,5 +1,5 @@
 {% macro copy_store_raw() %}
-  copy into {{ source('bronze', 'STORE_RAW') }}
+  copy into {{ source('bronze', 'store_raw') }}
   (
     store_id,
     store_type,

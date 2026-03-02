@@ -24,6 +24,9 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
+flags:
+  create_schema: true
+
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
@@ -44,3 +47,6 @@ models:
       +materialized: table
       +schema: GOLD
 
+snapshots:
+  dea_walmart:
+    +target_schema: SNAPSHOTS

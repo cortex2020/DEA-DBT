@@ -16,3 +16,5 @@ select
   dbt_valid_from  as vrsn_start_date,
   dbt_valid_to    as vrsn_end_date
 from {{ ref('walmart_fact_snapshot') }}
+
+

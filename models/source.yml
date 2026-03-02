@@ -1,0 +1,33 @@
+version: 2
+
+sources:
+
+  - name: bronze
+    database: DEA_WAL_DB
+    schema: BRONZE
+    tables:
+      - name: store_raw
+        identifier: STORE_RAW
+      - name: department_raw
+        identifier: DEPARTMENT_RAW
+      - name: fact_raw
+        identifier: FACT_RAW
+
+  # - name: silver
+  #   database: DEA_WAL_DB
+  #   schema: SILVER
+  #   tables:
+  #     - name: walmart_date_dim
+  #     - name: walmart_store_dim
+
+  # - name: gold
+  #   database: DEA_WAL_DB
+  #   schema: GOLD
+  #   tables:
+  #     - name: walmart_fact_table
+
+  # - name: snapshots
+  #   database: DEA_WAL_DB
+  #   schema: SNAPSHOTS
+  #   tables:
+  #     - name: walmart_fact_snapshot

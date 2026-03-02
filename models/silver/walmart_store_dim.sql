@@ -11,7 +11,7 @@ with stores as (
     store_id,
     store_type,
     size as store_size
-  from {{ source('bronze','STORE_RAW') }}
+  from {{ source('bronze','store_raw') }}
   {% if is_incremental() %}
     where insert_dts > (select coalesce(max(update_date), '1900-01-01'::timestamp_ntz) from {{ this }})
   {% endif %}
@@ -22,7 +22,7 @@ depts as (
   select distinct
     store_id,
     dept_id
-  from {{ source('bronze','DEPARTMENT_RAW') }}
+  from {{ source('bronze','department_raw') }}
 ),
 
 final as (
