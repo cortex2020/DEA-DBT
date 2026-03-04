@@ -13,16 +13,16 @@ sources:
       - name: fact_raw
         identifier: FACT_RAW
 
-  # - name: silver
-  #   database: DEA_WAL_DB
-  #   schema: SILVER
-  #   tables:
-  #     - name: walmart_date_dim
-  #     - name: walmart_store_dim
-  #     - name: walmart_fact_table
+  - name: silver
+    database: DEA_WAL_DB
+    schema: SILVER
+    tables:
+      - name: walmart_date_dim
+      - name: walmart_store_dim
+      - name: walmart_fact_table
 
-  # - name: snapshots
-  #   database: DEA_WAL_DB
-  #   schema: SNAPSHOTS
-  #   tables:
-  #     - name: walmart_fact_snapshot
+  - name: snapshots
+    database: DEA_WAL_DB
+    schema: SNAPSHOTS
+    tables:
+      - name: walmart_fact_snapshot
